@@ -1,0 +1,19 @@
+<h1>商品一覧</h1>
+
+<table>
+  <tr>
+    <th>商品名</th>
+    <th>価格</th>
+    <th>アクション</th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= link_to 'カートに追加', new_cart_item_path(product_id: product.id) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to '新しい商品を登録', new_product_path %></p>
+
